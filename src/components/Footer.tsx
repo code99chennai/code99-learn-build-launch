@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png";
+import SocialLinks from "./SocialLinks";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,9 +15,43 @@ const Footer = () => {
             <p className="text-white/70 mb-4">
               Best Software Training Institute in Chennai. 100% Practical Training with Placement Support.
             </p>
-            <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center gap-2 mb-4">
               <span className="text-2xl">⭐</span>
               <span className="font-bold text-lg">4.9 Google Rating</span>
+            </div>
+            
+            {/* Social Media Links */}
+            <div className="mt-6">
+              <p className="text-sm font-semibold mb-3">Follow Us</p>
+              <SocialLinks variant="footer" />
+            </div>
+            
+            {/* Additional Review Links */}
+            <div className="mt-6 space-y-2">
+              <a 
+                href="https://www.trustpilot.com/review/code99itacademy.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-white/70 hover:text-primary transition-colors block"
+              >
+                ⭐ Trustpilot Reviews
+              </a>
+              <a 
+                href="https://www.justdial.com/Chennai/Code99-It-Academy-Near-To-Vijaya-Nagar-Bus-Stand-Velacheri/044PXX44-XX44-241011210716-R3Z1_BZDET" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-white/70 hover:text-primary transition-colors block"
+              >
+                📱 Justdial Reviews
+              </a>
+              <a 
+                href="https://in.linkedin.com/in/sudhakar-code99" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-white/70 hover:text-primary transition-colors block"
+              >
+                👤 Connect with Founder
+              </a>
             </div>
           </div>
 
@@ -97,8 +132,17 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/60 text-sm">
+            <p className="text-white/60 text-sm text-center md:text-left">
               © {currentYear} Code99 IT Academy. All rights reserved. Founded by Sudhakar on April 24, 2024.
+              <br className="md:hidden" />
+              <a 
+                href="https://code99itacademy.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:underline ml-1"
+              >
+                www.code99itacademy.com
+              </a>
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-white/60 hover:text-primary text-sm transition-colors">

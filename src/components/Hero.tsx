@@ -1,12 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Phone, ArrowRight } from "lucide-react";
 import logo from "@/assets/logo.png";
+import ParticlesBackground from "./ParticlesBackground";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated background gradient */}
       <div className="absolute inset-0 gradient-hero opacity-90" />
+      
+      {/* TypeScript Particles Background */}
+      <ParticlesBackground />
+      
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       
       <div className="container mx-auto px-4 relative z-10 py-20">
