@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, ArrowRight } from "lucide-react";
 import logo from "@/assets/logo.png";
-import ParticlesBackground from "./ParticlesBackground";
+import CSSParticles from "./CSSParticles";
 
 const Hero = () => {
   return (
@@ -9,8 +9,8 @@ const Hero = () => {
       {/* Animated background gradient */}
       <div className="absolute inset-0 gradient-hero opacity-90" />
       
-      {/* TypeScript Particles Background */}
-      <ParticlesBackground />
+      {/* CSS Particles Background */}
+      <CSSParticles />
       
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       
