@@ -16,9 +16,15 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 relative z-10 py-20">
         <div className="max-w-5xl mx-auto text-center animate-fade-up">
-          {/* Logo */}
-          <div className="flex justify-center mb-8 animate-float">
-            <img src={logo} alt="Code99 IT Academy" className="h-32 md:h-40 drop-shadow-2xl" />
+          {/* Fixed Logo - Stays in view */}
+          <div className="flex justify-center mb-8">
+            <div className="relative">
+              <img 
+                src={logo} 
+                alt="Code99 IT Academy" 
+                className="h-24 md:h-32 drop-shadow-2xl" 
+              />
+            </div>
           </div>
 
           {/* Free IT Training Badge */}
