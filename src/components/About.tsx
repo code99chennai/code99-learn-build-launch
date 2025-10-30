@@ -105,10 +105,10 @@ const About = () => {
 
         {/* Fun Fridays Highlight */}
         <div className="mt-16 text-center max-w-4xl mx-auto">
-          <div className="bg-gradient-accent text-white rounded-3xl p-10 shadow-2xl">
+          <div className="bg-primary/10 text-foreground rounded-3xl p-10 shadow-2xl border border-primary/20">
             <div className="text-5xl mb-4">🎉</div>
-            <h3 className="text-3xl font-bold mb-4">Fun Fridays & Games!</h3>
-            <p className="text-lg text-white/90">
+            <h3 className="text-3xl font-bold mb-4 text-foreground">Fun Fridays & Games!</h3>
+            <p className="text-lg text-foreground/80">
               Learning shouldn't be boring! Every Friday, we organize fun activities, games, and team-building 
               events to keep the energy high and build lasting friendships.
             </p>
