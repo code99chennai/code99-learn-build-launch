@@ -28,33 +28,33 @@ const Hero = () => {
           </div>
 
           {/* Free IT Training Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 px-6 py-3 rounded-full mb-8">
+          <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm border border-primary/30 px-6 py-3 rounded-full mb-8">
             <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
             </span>
-            <span className="text-white font-semibold text-lg">FREE IT TRAINING</span>
+            <span className="text-primary font-semibold text-lg">FREE IT TRAINING</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
             Best Software Training
             <br />
-            <span className="text-secondary">Institute in Chennai</span>
+            <span className="text-primary">Institute in Chennai</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-white/90 mb-4 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-foreground/80 mb-4 max-w-3xl mx-auto">
             100% Practical Training • 100% Placement Support
           </p>
           
-          <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-            Learn job-ready IT skills at just <span className="font-bold text-secondary">₹2,500/month</span>
+          <p className="text-lg md:text-xl text-foreground/70 mb-10 max-w-2xl mx-auto">
+            Learn job-ready IT skills at just <span className="font-bold text-primary">₹2,500/month</span>
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="bg-secondary hover:bg-secondary/90 text-white text-lg px-8 py-6 rounded-full shadow-hover transition-all duration-300 hover:scale-105"
+              className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6 rounded-full shadow-hover transition-all duration-300 hover:scale-105"
               onClick={() => window.location.href = '#courses'}
             >
               Explore Courses
@@ -64,7 +64,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-primary text-lg px-8 py-6 rounded-full transition-all duration-300 hover:scale-105"
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-6 rounded-full transition-all duration-300 hover:scale-105"
               onClick={() => window.location.href = 'tel:+916374510754'}
             >
               <Phone className="mr-2 h-5 w-5" />
@@ -80,9 +80,9 @@ const Hero = () => {
               { label: "Monthly Fee", value: "₹2,500" },
               { label: "Placement", value: "100%" },
             ].map((stat, idx) => (
-              <div key={idx} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-white/80 text-sm">{stat.label}</div>
+              <div key={idx} className="bg-white/60 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 hover:bg-white/80 hover:border-primary/40 transition-all duration-300">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
+                <div className="text-foreground/70 text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -91,8 +91,8 @@ const Hero = () => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-2 h-2 bg-white rounded-full mt-2 animate-pulse"></div>
+        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center">
+          <div className="w-2 h-2 bg-primary rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

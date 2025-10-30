@@ -40,8 +40,8 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Custom gradients - Dark Green, Dark Gray, Dark Brown */
-    --gradient-hero: linear-gradient(135deg, hsl(95 40% 20% / 0.95), hsl(0 0% 12% / 0.95), hsl(30 20% 18% / 0.9));
+    /* Custom gradients - Light Green, White, Mild Brown */
+    --gradient-hero: linear-gradient(135deg, hsl(95 60% 95% / 0.95), hsl(0 0% 98% / 0.95), hsl(30 25% 92% / 0.9));
     --gradient-accent: linear-gradient(135deg, hsl(95 55% 70%), hsl(30 30% 65%));
     --shadow-card: 0 4px 20px hsl(95 76% 51% / 0.1);
     --shadow-hover: 0 8px 30px hsl(95 76% 51% / 0.15);
