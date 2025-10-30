@@ -115,17 +115,11 @@ const Placement = () => {
         </div>
 
         {/* Success Stats */}
-        <div className="mt-20 grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {[
-            { value: "100%", label: "Placement Support" },
-            { value: "500+", label: "Students Trained" },
-            { value: "4.9", label: "Google Rating" },
-          ].map((stat, idx) => (
-            <div key={idx} className="text-center p-8 bg-white rounded-3xl shadow-card hover:shadow-hover transition-shadow">
-              <div className="text-5xl font-bold text-primary mb-2">{stat.value}</div>
-              <div className="text-muted-foreground font-medium">{stat.label}</div>
-            </div>
-          ))}
+        <div className="mt-20 flex justify-center max-w-4xl mx-auto">
+          <div className="text-center p-8 bg-white rounded-3xl shadow-card hover:shadow-hover transition-shadow">
+            <div className="text-5xl font-bold text-primary mb-2">100%</div>
+            <div className="text-muted-foreground font-medium">Placement Support</div>
+          </div>
         </div>
       </div>
     </section>
