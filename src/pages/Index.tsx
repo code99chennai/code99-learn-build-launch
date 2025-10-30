@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Placement from "@/components/Placement";
 import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import SocialLinks from "@/components/SocialLinks";
 
@@ -23,6 +24,7 @@ const Index = () => {
         <Placement />
         <Gallery />
         <Contact />
+        <FAQ />
       </main>
       <Footer />
     </div>
