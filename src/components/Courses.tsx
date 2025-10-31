@@ -99,9 +99,15 @@ const Courses = () => {
 
                   <Button 
                     className="w-full bg-primary hover:bg-primary/90 text-white"
-                    onClick={() => window.location.href = '#contact'}
+                    onClick={() => {
+                      if (course.title === "Full Stack Java") {
+                        window.location.href = '/java-training-chennai';
+                      } else {
+                        window.location.href = '#contact';
+                      }
+                    }}
                   >
-                    Enroll Now
+                    {course.title === "Full Stack Java" ? "View Course Details" : "Enroll Now"}
                   </Button>
                 </CardContent>
               </Card>
