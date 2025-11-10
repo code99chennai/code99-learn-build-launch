@@ -4,6 +4,14 @@ import { Badge } from "@/components/ui/badge";
 import { Code, Coffee, Palette, TrendingUp, Laptop } from "lucide-react";
 
 const Courses = () => {
+  const courseLinks: Record<string, string> = {
+    "Full Stack Web Development": "/full-stack-web-development-chennai",
+    "Full Stack Java": "/java-training-chennai",
+    "Full Stack Python": "/python-training-chennai",
+    "Digital Marketing": "/digital-marketing-chennai",
+    "UI/UX Design": "/ui-ux-training-chennai",
+  };
+
   const courses = [
     {
       title: "Full Stack Web Development",
@@ -100,14 +108,10 @@ const Courses = () => {
                   <Button 
                     className="w-full bg-primary hover:bg-primary/90 text-white"
                     onClick={() => {
-                      if (course.title === "Full Stack Java") {
-                        window.location.href = '/java-training-chennai';
-                      } else {
-                        window.location.href = '#contact';
-                      }
+                      window.location.href = courseLinks[course.title];
                     }}
                   >
-                    {course.title === "Full Stack Java" ? "View Course Details" : "Enroll Now"}
+                    View Course Details
                   </Button>
                 </CardContent>
               </Card>
