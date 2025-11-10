@@ -1,16 +1,58 @@
 import { Button } from "@/components/ui/button";
-import { Phone, ArrowRight } from "lucide-react";
+import { Phone, ArrowRight, Code2, Database, TrendingUp, Palette, Layers } from "lucide-react";
 import logo from "@/assets/logo.png";
-import CSSParticles from "./CSSParticles";
 
 const Hero = () => {
+  const techIcons = [
+    { Icon: Code2, label: "Java", position: "top-20 left-[10%]", delay: "0s" },
+    { Icon: Database, label: "Python", position: "top-40 right-[15%]", delay: "1s" },
+    { Icon: TrendingUp, label: "Digital Marketing", position: "bottom-40 left-[20%]", delay: "2s" },
+    { Icon: Layers, label: "Full Stack", position: "bottom-32 right-[10%]", delay: "3s" },
+    { Icon: Palette, label: "UI/UX", position: "top-1/2 left-[8%]", delay: "4s" },
+    { Icon: Code2, label: "Web Dev", position: "top-1/3 right-[12%]", delay: "5s" },
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 gradient-hero opacity-90" />
+      {/* Animated Green Gradient Background */}
+      <div 
+        className="absolute inset-0 opacity-90"
+        style={{
+          background: 'linear-gradient(135deg, #10b981 0%, #059669 25%, #047857 50%, #065f46 75%, #064e3b 100%)',
+          backgroundSize: '400% 400%',
+          animation: 'gradient-shift 15s ease infinite',
+        }}
+      />
       
-      {/* CSS Particles Background */}
-      <CSSParticles />
+      {/* Glossy Blur Overlay */}
+      <div className="absolute inset-0 bg-white/5 backdrop-blur-[1px]" />
+      
+      {/* Floating Tech Icons with Glossy Effect */}
+      {techIcons.map((tech, idx) => (
+        <div
+          key={idx}
+          className={`absolute ${tech.position} hidden lg:block`}
+          style={{
+            animation: `float 6s ease-in-out infinite`,
+            animationDelay: tech.delay,
+          }}
+        >
+          <div className="relative group">
+            {/* Glossy blur background */}
+            <div className="absolute inset-0 bg-white/20 backdrop-blur-xl rounded-2xl transform group-hover:scale-110 transition-transform duration-300" />
+            {/* Icon container */}
+            <div className="relative bg-white/10 backdrop-blur-sm border border-white/30 rounded-2xl p-4 shadow-2xl">
+              <tech.Icon className="w-8 h-8 text-white drop-shadow-lg" />
+            </div>
+            {/* Glossy shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent rounded-2xl opacity-50" />
+          </div>
+        </div>
+      ))}
+      
+      {/* Additional glossy shapes */}
+      <div className="absolute top-20 right-20 w-64 h-64 bg-emerald-400/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 left-20 w-80 h-80 bg-green-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
       
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       
