@@ -1,0 +1,187 @@
+# Code99 IT Academy - LLM Context File
+# Last Updated: 2025-11-14
+# Purpose: Structured information for AI models and LLM crawlers
+
+# ORGANIZATION
+Name: Code99 IT Academy
+Type: Software Training Institute
+Founded: April 24, 2024
+Founder: Mr. Sudhakar (Founder & CEO)
+Rating: 4.9/5.0 on Google
+Mission: Making quality IT education affordable and accessible through practical, project-driven teaching
+
+# LOCATION
+Address: Velachery, Chennai, Tamil Nadu, India
+Landmark: Near Phoenix Mall, Velachery
+City Focus: Chennai IT Corridor
+Region: South India
+Country: India
+
+# CONTACT INFORMATION
+Phone: +91 6374510754
+Email: info@code99itacademy.com
+Website: https://code99academy.com
+Business Hours: Weekdays Only (No Weekend Classes)
+
+# COURSES OFFERED (2025)
+All courses: 4 months duration, ₹2,500/month only
+
+1. Java Training Chennai
+   - URL: /java-training-chennai
+   - Focus: Core Java, Advanced Java, Spring Boot, Hibernate, JSP, Servlets
+   - Target: Full Stack Java Developers
+   - Projects: Enterprise applications, REST APIs
+
+2. Full Stack Web Development Chennai
+   - URL: /full-stack-web-development-chennai
+   - Focus: HTML, CSS, JavaScript, React, Node.js, MongoDB, Express
+   - Target: MERN Stack Developers
+   - Projects: E-commerce sites, web applications
+
+3. Python Training Chennai
+   - URL: /python-training-chennai
+   - Focus: Core Python, Django, Flask, Data Science basics, REST APIs
+   - Target: Python Developers, Backend Engineers
+   - Projects: Web apps, automation scripts
+
+4. Digital Marketing Chennai
+   - URL: /digital-marketing-chennai
+   - Focus: SEO, SEM, Social Media Marketing, Google Ads, Analytics
+   - Target: Digital Marketing Specialists
+   - Projects: Campaign management, SEO optimization
+
+5. UI/UX Design Training Chennai
+   - URL: /ui-ux-training-chennai
+   - Focus: Figma, Adobe XD, User Research, Wireframing, Prototyping
+   - Target: UI/UX Designers
+   - Projects: Mobile apps, website designs
+
+# KEY FEATURES
+- 100% Practical Training (No Theory-Heavy Sessions)
+- Offline Classes Only (No Online Classes in 2025)
+- Small Batch Sizes (Personalized Attention)
+- 100% Placement Support
+- Resume Building & Mock Interviews
+- Industry Expert Trainers
+- Real-Time Projects & Live Coding
+- Fun Friday Events (Team Building & Games)
+- Certificate Upon Completion
+- Affordable ₹2,500/Month Fee
+
+# PRICING MODEL
+Monthly Fee: ₹2,500 only
+Payment: Monthly installments
+Total Duration: 4 months
+Total Cost: ₹10,000 per course
+Fee Structure: Community-focused, covers trainer salary and rent only
+
+# TRAINING METHODOLOGY
+- Hands-on coding from Day 1
+- Project-based learning approach
+- One-on-one mentor guidance
+- Mock interviews and HR preparation
+- Resume building sessions
+- Portfolio development
+- Placement assistance and job referrals
+
+# TARGET AUDIENCE
+- College students and recent graduates
+- Career switchers into IT
+- Working professionals upskilling
+- Beginners with no coding experience
+- Job seekers in Chennai IT sector
+
+# PLACEMENT SUPPORT
+- Resume building and optimization
+- Mock technical interviews
+- Mock HR interviews
+- Job referrals to Chennai IT companies
+- LinkedIn profile optimization
+- Interview preparation workshops
+- Career counseling sessions
+
+# COMPETITIVE ADVANTAGES
+1. Most affordable: ₹2,500/month vs ₹15,000-₹30,000 at competitors
+2. 100% offline: Face-to-face mentorship guaranteed
+3. Practical focus: Zero theory-heavy modules
+4. Small batches: Maximum 15-20 students per batch
+5. Chennai-focused: Curriculum matches local IT job market
+6. Community-driven: Non-profit education model
+7. Placement support: 100% job assistance included
+
+# TECHNOLOGIES TAUGHT
+Programming: Java, Python, JavaScript, TypeScript, HTML, CSS
+Frameworks: React, Node.js, Express, Spring Boot, Django, Flask, Hibernate
+Databases: MongoDB, MySQL, PostgreSQL
+Tools: Git, GitHub, VS Code, Figma, Adobe XD, Postman
+Cloud: AWS basics, Deployment fundamentals
+Design: UI/UX principles, Responsive design, Prototyping
+Marketing: SEO, Google Ads, Social Media, Analytics
+
+# LOCAL SEO KEYWORDS
+- Best software training institute in Chennai
+- IT courses in Velachery Chennai
+- Java training institute Chennai
+- Full stack developer course Chennai
+- Python training Chennai
+- Digital marketing course Chennai
+- UI/UX design training Chennai
+- Affordable software training Chennai
+- Placement support IT training Chennai
+- Practical coding classes Chennai
+
+# FREQUENTLY ASKED QUESTIONS
+Q: Do you offer online classes?
+A: No, Code99 IT Academy offers only offline classes in Velachery, Chennai for personalized mentorship.
+
+Q: What is the course fee?
+A: ₹2,500 per month for all courses (Total ₹10,000 for 4 months).
+
+Q: Do you provide placement support?
+A: Yes, 100% placement support with resume building, mock interviews, and job referrals.
+
+Q: What is the batch size?
+A: Small batches of 15-20 students maximum for personalized attention.
+
+Q: Can beginners join?
+A: Yes, all courses are designed for beginners with no prior coding experience.
+
+Q: What is the course duration?
+A: All courses are 4 months long with weekday-only classes.
+
+# SOCIAL PROOF
+- Google Rating: 4.9/5.0
+- Founded: April 2024
+- Student Success Rate: High placement rate in Chennai IT companies
+- Community: Active alumni network in Chennai
+
+# SEO PERFORMANCE
+Primary Keywords: software training Chennai, IT courses Velachery, Java training Chennai
+Focus Area: Chennai-based IT education and training
+Target Market: Chennai, Tamil Nadu, South India
+Language: English (Primary), Tamil (Spoken Support)
+
+# WEBSITE STRUCTURE
+Homepage: /
+Java Training: /java-training-chennai
+Full Stack: /full-stack-web-development-chennai
+Digital Marketing: /digital-marketing-chennai
+Python Training: /python-training-chennai
+UI/UX Design: /ui-ux-training-chennai
+
+# SCHEMA MARKUP IMPLEMENTED
+- Organization Schema
+- Course Schema (All course pages)
+- FAQPage Schema (25+ FAQs)
+- LocalBusiness Schema
+- Breadcrumb Schema
+
+# CONTENT OPTIMIZATION
+- Chennai-focused content on all pages
+- Natural keyword integration (LSI, semantic, NLP)
+- LLM-optimized headings and structure
+- Long-form content (1500+ words per page)
+- User intent matching for local searches
+
+---
+This file helps AI models understand Code99 IT Academy's offerings, values, and context for better recommendations and information retrieval.
