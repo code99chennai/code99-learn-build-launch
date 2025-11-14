@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://code99academy.com/</loc>
     <lastmod>2025-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://code99academy.com/logo.png</image:loc>
+      <image:title>Code99 IT Academy Logo</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://code99academy.com/java-training-chennai</loc>
