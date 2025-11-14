@@ -43,7 +43,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://code99academy.com/sitemap.xml
+Sitemap: https://code99itacademy.com/sitemap.xml
 
 # LLM Context File
 # /llms.txt

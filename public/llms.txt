@@ -20,7 +20,7 @@ Country: India
 # CONTACT INFORMATION
 Phone: +91 6374510754
 Email: info@code99itacademy.com
-Website: https://code99academy.com
+Website: https://code99itacademy.com
 Business Hours: Weekdays Only (No Weekend Classes)
 
 # COURSES OFFERED (2025)
