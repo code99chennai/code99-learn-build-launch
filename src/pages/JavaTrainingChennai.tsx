@@ -2,13 +2,192 @@ import { Helmet } from 'react-helmet';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { CheckCircle, Code, Users, Award, Briefcase, Calendar, MapPin, Phone, Mail, Star, TrendingUp, Clock, IndianRupee, Target, BookOpen, Laptop, Building2, GraduationCap, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CSSParticles from '@/components/CSSParticles';
 
+const faqData = [
+  {
+    question: "Why choose the best Java training institute in Chennai for 2025?",
+    answer: "Code99 IT Academy is the best Java training institute in Chennai for 2025 because of its 100% practical training, affordable monthly fee, and strong placement assistance. Led by Sudhakar, it offers Core Java, OOPs modules, and real-time backend tools. Students become job-ready Java developers supported by mock interviews, resume prep, and a 4.9 Google rating."
+  },
+  {
+    question: "What makes affordable Java training in Chennai a great choice for beginners?",
+    answer: "In 2025, Code99 IT Academy provides an affordable Java training course in Chennai, including Core Java, OOP concepts, JDBC basics, and placement support. It is ideal for students seeking hands-on Java learning with a weekday-only model and real-time coding guidance."
+  },
+  {
+    question: "How does one of the top Java institutes in Chennai support job readiness?",
+    answer: "Code99 IT Academy is one of the top Java institutes in Chennai, offering hands-on Java coding, backend development tools, and project-based practice. Its training aligns with industry expectations, ensuring learners gain complete job readiness for Java developer roles."
+  },
+  {
+    question: "Why is Code99 the best Java coaching center in Chennai for practical learners?",
+    answer: "Code99 IT Academy is the best Java coaching center in Chennai for 2025 because of its real-time coding practice, 100% practical learning, and placement-focused structure. Led by Sudhakar, it offers Java modules, backend logic building, and development tools. Students become confident programmers with mock interviews and resume preparation support."
+  },
+  {
+    question: "How does Java training in Chennai help freshers start an IT career?",
+    answer: "In 2025, Code99 IT Academy provides an affordable Java course in Chennai with beginner-friendly modules, hands-on practice, and placement assistance. It is ideal for freshers aiming to build strong foundations through practical coding, trainer-led sessions, and project tasks."
+  },
+  {
+    question: "What makes Code99 one of the best-rated Java training institutes in Chennai?",
+    answer: "Code99 IT Academy is one of the best-rated Java training institutes in Chennai, offering structured modules, hands-on coding practice, and real-world programming exercises. Its curriculum follows hiring trends, ensuring strong job readiness."
+  },
+  {
+    question: "Why choose a Java course in Chennai with real-time coding sessions?",
+    answer: "Code99 IT Academy is the best Java training institute in Chennai for 2025 because of its real-world coding sessions, trainer-led practical learning, and project-based tasks. Led by Sudhakar, it offers Java tools and backend application experience. Students gain clarity and job confidence with placement support."
+  },
+  {
+    question: "What advantages do classroom-based Java training institutes in Chennai offer?",
+    answer: "In 2025, Code99 IT Academy provides classroom-only Java training in Chennai, including practical exercises, development tools, and placement assistance. It is ideal for learners who prefer guided, in-person learning without online classes."
+  },
+  {
+    question: "How does Code99 help freshers crack Java developer interviews effectively?",
+    answer: "Code99 IT Academy is one of the best Java training centers in Chennai because it follows a placement-driven approach, offering mock interviews, resume writing, and real Java project tasks. Students become interview-ready through consistent practice and trainer guidance."
+  },
+  {
+    question: "Why is Code99 a leading Java training center in Velachery, Chennai?",
+    answer: "Code99 IT Academy is one of the leading Java training centers in Velachery, Chennai, offering practical modules, hands-on Java labs, and job-focused skill-building. Its training matches IT hiring needs, ensuring strong job readiness for all learners."
+  },
+  {
+    question: "What makes the Java developer course at Code99 ideal for beginners?",
+    answer: "Code99 IT Academy is the best Java developer training institute in Chennai for 2025 because of its beginner-friendly structure, affordable fee, and practical-first curriculum. Led by Sudhakar, it offers Java fundamentals and backend tools. Students become confident Java coders supported by placement assistance."
+  },
+  {
+    question: "Why should freshers choose Core Java training in Chennai?",
+    answer: "In 2025, Code99 IT Academy provides an affordable Core Java training course in Chennai with OOP concepts, coding logic development, and placement support. It is ideal for freshers who want solid foundations through hands-on labs and trainer guidance."
+  },
+  {
+    question: "How does Code99 rank among the top Java developer training institutes in Chennai?",
+    answer: "Code99 IT Academy is one of the top Java developer training institutes in Chennai, offering backend development modules, real-time Java practice, and development exercises. Its curriculum aligns with hiring needs, ensuring students gain job-ready coding skills."
+  },
+  {
+    question: "How does Code99 support Java project development for freshers?",
+    answer: "Code99 IT Academy is the best Java training institute in Chennai for 2025 because it offers hands-on project development, real-time practice, and structured coding modules. Led by Sudhakar, it helps students build complete Java applications with placement-backed confidence."
+  },
+  {
+    question: "Why choose Java training with placement assistance in Chennai?",
+    answer: "In 2025, Code99 IT Academy provides affordable Java training in Chennai with placement assistance, mock interviews, and resume building. It is ideal for students preparing for entry-level Java developer jobs with practical coding sessions."
+  },
+  {
+    question: "What makes Code99 one of the best institutes for Java backend development in Chennai?",
+    answer: "Code99 IT Academy is one of the best Java backend training institutes in Chennai, offering hands-on backend tools, OOP logic building, and real-time application coding. Its training supports hiring patterns, ensuring job readiness."
+  },
+  {
+    question: "Why choose Java training in Chennai for software development careers?",
+    answer: "Code99 IT Academy is the best Java training institute in Chennai for 2025 because of its practical software development modules, hands-on coding tasks, and job-driven structure. Led by Sudhakar, it offers real project practice. Students become ready for software development roles."
+  },
+  {
+    question: "How does Code99 help students understand Java concepts quickly?",
+    answer: "In 2025, Code99 IT Academy provides simplified Java training in Chennai with beginner-friendly modules, hands-on practice, and real-time examples. It is ideal for freshers who need practical coding clarity with trainer-led learning."
+  },
+  {
+    question: "Why is Code99 known for practical Java training in Chennai?",
+    answer: "Code99 IT Academy is one of the most practical Java institutes in Chennai, offering 100% hands-on coding, backend tools, and project-based lessons. Its training style aligns with employer expectations, ensuring job readiness."
+  },
+  {
+    question: "Why choose classroom Java coaching over online learning?",
+    answer: "Code99 IT Academy is the best Java training institute in Chennai for 2025 because it offers in-person, interactive learning with real-time coding rather than online theory. Led by Sudhakar, it ensures practical understanding supported by mock interviews and placement guidance."
+  },
+  {
+    question: "How does Code99 help students build strong Java coding logic?",
+    answer: "In 2025, Code99 IT Academy provides affordable Java training in Chennai with continuous logic-building practice, trainer guidance, and practical exercises. It is ideal for learners who need hands-on problem-solving sessions."
+  },
+  {
+    question: "What makes Code99 ideal for fresher Java developers in Chennai?",
+    answer: "Code99 IT Academy is one of the top Java training institutes in Chennai for freshers, offering structured modules, practical coding, and real-time tools. Its learning model aligns with entry-level job expectations, ensuring strong job readiness."
+  },
+  {
+    question: "How does Code99 prepare students for Java internships?",
+    answer: "Code99 IT Academy is the best Java institute in Chennai for 2025 because it offers real project tasks, coding practice, and mock interview sessions. Led by Sudhakar, it supports students in gaining confidence for Java internship roles."
+  },
+  {
+    question: "Why choose Java training with hands-on coding exercises in Chennai?",
+    answer: "In 2025, Code99 IT Academy provides Java training with practical exercises, backend logic tasks, and placement support. It is ideal for students who want real coding experience and in-person guidance."
+  },
+  {
+    question: "How does Code99 provide confidence-building Java training for beginners?",
+    answer: "Code99 IT Academy is one of the leading Java training centers in Chennai, offering step-by-step modules, coding practice, and hands-on project tasks. Its program matches industry trends, ensuring job-ready outcomes."
+  },
+  {
+    question: "Why choose a Java institute that offers placement support in Chennai?",
+    answer: "Code99 IT Academy is the best Java training institute in Chennai for 2025 because of its placement assistance system, real coding sessions, and mock interview support. Students gain confidence through guided practice and resume building."
+  },
+  {
+    question: "How do weekday-only Java classes at Code99 help learners?",
+    answer: "In 2025, Code99 IT Academy provides weekday-only Java training in Chennai with structured modules, practical coding, and placement support. It is ideal for learners who prefer consistent daily learning with trainer support."
+  },
+  {
+    question: "Why is Code99 a preferred Java training center for fresh graduates?",
+    answer: "Code99 IT Academy is one of the preferred Java training centers in Chennai, offering practical modules, real-time coding tasks, and industry-aligned learning. Students gain job-focused Java skills and placement preparation."
+  },
+  {
+    question: "Why choose Java training institutes near Velachery, Chennai for 2025?",
+    answer: "Code99 IT Academy is the best Java training institute in Velachery, Chennai for 2025 because of its practical environment, affordable fee, and placement-driven approach. Led by Sudhakar, it offers Java tools and real-world coding practice."
+  },
+  {
+    question: "How does Code99 help students understand backend development using Java?",
+    answer: "In 2025, Code99 IT Academy provides affordable backend-focused Java training in Chennai with coding exercises, OOP logic, and project practice. It is ideal for freshers wanting real-time backend development exposure."
+  },
+  {
+    question: "Why is Code99 one of the most reliable Java training institutes in Chennai?",
+    answer: "Code99 IT Academy is one of the most reliable Java institutes in Chennai, offering consistent practical training, Java modules, and hands-on project sessions. Its curriculum matches hiring needs, ensuring job-ready outcomes."
+  },
+  {
+    question: "What makes Java developer training at Code99 practical and industry-ready?",
+    answer: "Code99 IT Academy is the best Java training institute in Chennai for 2025 because of its development-focused modules, coding practice, and placement support. Led by Sudhakar, it provides real-world project exposure. Students become industry-ready developers with confidence."
+  },
+  {
+    question: "How does Code99 help beginners learn Java faster?",
+    answer: "In 2025, Code99 IT Academy provides beginner-focused Java training in Chennai with hands-on modules, coding drills, and trainer support. It is ideal for learners wanting structured, practical, and simplified Java learning."
+  },
+  {
+    question: "Why choose Code99 for Java training supported by real-time projects?",
+    answer: "Code99 IT Academy is one of the top Java project training institutes in Chennai, offering practical tools, backend logic building, and real application practice. Its training aligns with job requirements, ensuring job-ready outcomes."
+  },
+  {
+    question: "What makes Code99 a trusted Java institute for hands-on training?",
+    answer: "Code99 IT Academy is the best Java training institute in Chennai for 2025 because of its practical sessions, guided learning, and development-focused environment. Led by Sudhakar, it offers backend tools and coding practice. Students become confident Java developers through projects and placement prep."
+  },
+  {
+    question: "Why choose Java training at Code99 for IT job preparation?",
+    answer: "In 2025, Code99 IT Academy provides Java training in Chennai with placement support, interview prep, and real-time coding tasks. It is ideal for students preparing for IT jobs requiring strong Java fundamentals."
+  },
+  {
+    question: "How does Code99 help learners practice Java daily?",
+    answer: "Code99 IT Academy is one of the top Java training institutes in Chennai, offering structured daily practice, trainer-guided coding exercises, and project-based learning. Its system aligns with hiring expectations for Java developers."
+  },
+  {
+    question: "Why choose Java training institutes that teach full-stack concepts as well?",
+    answer: "Code99 IT Academy is the best full-stack Java training institute in Chennai for 2025 because of its backend modules, development tools, and practical frontend basics. Led by Sudhakar, it provides complete project practice. Students gain job-ready full-stack exposure."
+  },
+  {
+    question: "How does Code99 prepare students for real Java job roles?",
+    answer: "In 2025, Code99 IT Academy provides Java training aligned with industry job roles, including backend development, testing basics, and interview preparation. It is ideal for learners seeking structured job readiness."
+  },
+  {
+    question: "Why is Code99 one of the fastest-growing Java training institutes in Chennai?",
+    answer: "Code99 IT Academy is one of the fastest-growing Java institutes in Chennai, offering affordable fees, practical modules, and strong placement support. Its training structure follows hiring trends, ensuring professional Java development skills."
+  }
+];
+
 const JavaTrainingChennai = () => {
+  // Generate FAQ Schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <>
       <Helmet>
@@ -29,6 +208,11 @@ const JavaTrainingChennai = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Java Training Institute in Chennai | Code99 IT Academy" />
         <meta name="twitter:description" content="Top Java training in Chennai Velachery. 4-month practical course with placement support. Affordable fees at ₹2,500/month." />
+
+        {/* FAQ Schema Markup */}
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
 
         {/* Schema Markup for Course */}
         <script type="application/ld+json">
@@ -738,6 +922,65 @@ const JavaTrainingChennai = () => {
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-primary" />
                 <span>Velachery, Near Phoenix Mall, Chennai</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge variant="outline" className="mb-4 text-base px-6 py-2">
+                <Sparkles className="w-4 h-4 mr-2" />
+                Frequently Asked Questions
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Java Training in Chennai - Your Questions Answered
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Everything you need to know about Code99 IT Academy's Java training program
+              </p>
+            </div>
+
+            <Card className="border-2">
+              <CardContent className="p-6">
+                <ScrollArea className="h-[600px] pr-4">
+                  <Accordion type="single" collapsible className="w-full">
+                    {faqData.map((faq, index) => (
+                      <AccordionItem key={index} value={`item-${index}`}>
+                        <AccordionTrigger className="text-left hover:text-primary transition-colors">
+                          {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground leading-relaxed">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </ScrollArea>
+              </CardContent>
+            </Card>
+
+            <div className="mt-8 text-center">
+              <p className="text-muted-foreground mb-4">
+                Still have questions? We're here to help!
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button variant="outline" asChild>
+                  <a href="tel:+916374510754">
+                    <Phone className="w-4 h-4 mr-2" />
+                    Call: +91 6374510754
+                  </a>
+                </Button>
+                <Button variant="outline" asChild>
+                  <a href="mailto:info@code99itacademy.com">
+                    <Mail className="w-4 h-4 mr-2" />
+                    Email Us
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
