@@ -1,11 +1,6 @@
 import { Helmet } from "react-helmet";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const faqData = [
   {
@@ -143,19 +138,25 @@ const FAQ = () => {
           </p>
         </div>
 
-        <ScrollArea className="h-[600px] rounded-lg border bg-card p-6">
-          <Accordion type="single" collapsible className="w-full">
+        <ScrollArea className="h-[600px] [&>[data-radix-scroll-area-viewport]]:!overflow-x-hidden">
+          <div className="space-y-8 pr-4">
             {faqData.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left">
-                  {index + 1}. {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+              <Card key={index} className="border-2 hover:border-primary/50 transition-colors">
+                <CardHeader>
+                  <CardTitle className="text-xl flex items-start gap-3">
+                    <span className="text-primary font-bold min-w-[2rem]">Q{index + 1}.</span>
+                    <span>{faq.question}</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-start gap-3">
+                    <span className="text-muted-foreground font-bold min-w-[2rem]">A.</span>
+                    <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
-          </Accordion>
+          </div>
         </ScrollArea>
       </div>
     </section>
