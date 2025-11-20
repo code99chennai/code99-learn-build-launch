@@ -945,24 +945,26 @@ const JavaTrainingChennai = () => {
               </p>
             </div>
 
-            <div className="space-y-8">
-              {faqData.map((faq, index) => (
-                <Card key={index} className="border-2 hover:border-primary/50 transition-colors">
-                  <CardHeader>
-                    <CardTitle className="text-xl flex items-start gap-3">
-                      <span className="text-primary font-bold min-w-[2rem]">Q{index + 1}.</span>
-                      <span>{faq.question}</span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-start gap-3">
-                      <span className="text-muted-foreground font-bold min-w-[2rem]">A.</span>
-                      <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <ScrollArea className="h-[600px] [&>[data-radix-scroll-area-viewport]]:!overflow-x-hidden">
+              <div className="space-y-8 pr-4">
+                {faqData.map((faq, index) => (
+                  <Card key={index} className="border-2 hover:border-primary/50 transition-colors">
+                    <CardHeader>
+                      <CardTitle className="text-xl flex items-start gap-3">
+                        <span className="text-primary font-bold min-w-[2rem]">Q{index + 1}.</span>
+                        <span>{faq.question}</span>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-start gap-3">
+                        <span className="text-muted-foreground font-bold min-w-[2rem]">A.</span>
+                        <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </ScrollArea>
 
             <div className="mt-8 text-center">
               <p className="text-muted-foreground mb-4">
