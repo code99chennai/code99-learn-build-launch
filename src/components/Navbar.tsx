@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
@@ -6,6 +7,8 @@ import logo from "@/assets/logo.png";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,12 +19,12 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { label: "Home", href: "#home" },
-    { label: "Courses", href: "#courses" },
-    { label: "About", href: "#about" },
-    { label: "Placement", href: "#placement" },
-    { label: "Gallery", href: "#gallery" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: isHomePage ? "#home" : "/#home" },
+    { label: "Courses", href: isHomePage ? "#courses" : "/#courses" },
+    { label: "About", href: isHomePage ? "#about" : "/#about" },
+    { label: "Placement", href: isHomePage ? "#placement" : "/#placement" },
+    { label: "Gallery", href: isHomePage ? "#gallery" : "/#gallery" },
+    { label: "Contact", href: isHomePage ? "#contact" : "/#contact" },
   ];
 
   return (
