@@ -8,6 +8,7 @@ import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import SocialLinks from "@/components/SocialLinks";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
@@ -16,6 +17,9 @@ const Index = () => {
       
       {/* Floating Social Media Sidebar */}
       <SocialLinks variant="floating" className="hidden lg:block" />
+      
+      {/* Back to Top Button */}
+      <BackToTop />
       
       <main id="home">
         <Hero />
