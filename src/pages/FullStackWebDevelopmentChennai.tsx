@@ -6,6 +6,7 @@ import { CheckCircle, Code, Users, Award, Briefcase, Calendar, MapPin, Phone, Ma
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import BackToTop from '@/components/BackToTop';
 import CSSParticles from '@/components/CSSParticles';
 
 const FullStackWebDevelopmentChennai = () => {
@@ -439,6 +440,7 @@ const FullStackWebDevelopmentChennai = () => {
         </div>
       </section>
 
+      <BackToTop />
       <Footer />
     </>
   );
