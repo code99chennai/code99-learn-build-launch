@@ -1,9 +1,12 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import { useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import SocialLinks from "./SocialLinks";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   return (
     <footer className="bg-foreground text-white">
@@ -62,7 +65,7 @@ const Footer = () => {
               {["Home", "Courses", "About", "Placement", "Gallery", "Contact"].map((link) => (
                 <li key={link}>
                   <a 
-                    href={`#${link.toLowerCase()}`}
+                    href={isHomePage ? `#${link.toLowerCase()}` : `/#${link.toLowerCase()}`}
                     className="text-white/70 hover:text-primary transition-colors"
                   >
                     {link}
@@ -85,7 +88,7 @@ const Footer = () => {
               ].map((course) => (
                 <li key={course}>
                   <a 
-                    href="#courses"
+                    href={isHomePage ? "#courses" : "/#courses"}
                     className="text-white/70 hover:text-primary transition-colors"
                   >
                     {course}
