@@ -6,6 +6,7 @@ import Placement from "@/components/Placement";
 import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
+import FeaturedPosts from "@/components/FeaturedPosts";
 import Footer from "@/components/Footer";
 import SocialLinks from "@/components/SocialLinks";
 import BackToTop from "@/components/BackToTop";
@@ -27,6 +28,7 @@ const Index = () => {
         <About />
         <Placement />
         <Gallery />
+        <FeaturedPosts />
         <Contact />
         <FAQ />
       </main>
