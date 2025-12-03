@@ -24,6 +24,7 @@ const Navbar = () => {
     { label: "About", href: isHomePage ? "#about" : "/#about" },
     { label: "Placement", href: isHomePage ? "#placement" : "/#placement" },
     { label: "Gallery", href: isHomePage ? "#gallery" : "/#gallery" },
+    { label: "Blog", href: "/blog" },
     { label: "Contact", href: isHomePage ? "#contact" : "/#contact" },
   ];
 
