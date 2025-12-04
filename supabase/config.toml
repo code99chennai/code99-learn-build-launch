@@ -1,1 +1,10 @@
 project_id = "ahytljgocthchixngncb"
+
+[functions.generate-blog-content]
+verify_jwt = false
+
+[functions.search-console-index]
+verify_jwt = false
+
+[functions.publish-scheduled-posts]
+verify_jwt = false
