@@ -43,9 +43,20 @@ const calculateReadingTime = (content: string): number => {
   return Math.max(1, Math.ceil(words / 200));
 };
 
+interface RelatedPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  featured_image: string;
+  published_at: string;
+  meta_keywords: string[];
+}
+
 export default function BlogPost() {
   const { slug } = useParams();
   const [post, setPost] = useState<BlogPostData | null>(null);
+  const [relatedPosts, setRelatedPosts] = useState<RelatedPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
 
@@ -54,6 +65,12 @@ export default function BlogPost() {
       fetchPost(slug);
     }
   }, [slug]);
+
+  useEffect(() => {
+    if (post?.meta_keywords && post.meta_keywords.length > 0) {
+      fetchRelatedPosts(post.id, post.meta_keywords);
+    }
+  }, [post]);
 
   const fetchPost = async (postSlug: string) => {
     const { data, error } = await supabase
@@ -74,6 +91,47 @@ export default function BlogPost() {
         .eq("id", data.id);
     }
     setLoading(false);
+  };
+
+  const fetchRelatedPosts = async (currentPostId: string, keywords: string[]) => {
+    // Fetch all published posts except current one
+    const { data, error } = await supabase
+      .from("blog_posts")
+      .select("id, title, slug, excerpt, featured_image, published_at, meta_keywords")
+      .eq("status", "published")
+      .neq("id", currentPostId)
+      .order("published_at", { ascending: false })
+      .limit(20);
+
+    if (error || !data) return;
+
+    // Score posts by keyword overlap
+    const scoredPosts = data.map((relatedPost) => {
+      const postKeywords = relatedPost.meta_keywords || [];
+      const matchCount = postKeywords.filter((kw: string) => 
+        keywords.some((k) => 
+          kw.toLowerCase().includes(k.toLowerCase()) || 
+          k.toLowerCase().includes(kw.toLowerCase())
+        )
+      ).length;
+      return { ...relatedPost, score: matchCount };
+    });
+
+    // Sort by score and take top 3
+    const topRelated = scoredPosts
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3)
+      .filter((p) => p.score > 0 || scoredPosts.length <= 3);
+
+    // If not enough keyword matches, fill with recent posts
+    if (topRelated.length < 3) {
+      const remainingPosts = scoredPosts
+        .filter((p) => !topRelated.find((tp) => tp.id === p.id))
+        .slice(0, 3 - topRelated.length);
+      topRelated.push(...remainingPosts);
+    }
+
+    setRelatedPosts(topRelated.slice(0, 3));
   };
 
   const handleShare = async () => {
@@ -451,6 +509,52 @@ export default function BlogPost() {
                 </Button>
               </div>
             </section>
+
+            {/* Related Posts Section */}
+            {relatedPosts.length > 0 && (
+              <section className="mt-14 pt-10 border-t border-border/50">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  Related Articles
+                </h2>
+                <p className="text-muted-foreground mb-8">
+                  Continue exploring similar topics that might interest you
+                </p>
+                <div className="grid gap-6 md:grid-cols-3">
+                  {relatedPosts.map((relatedPost) => (
+                    <Link 
+                      key={relatedPost.id} 
+                      to={`/blog/${relatedPost.slug}`}
+                      className="group"
+                    >
+                      <Card className="h-full border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300 overflow-hidden bg-card">
+                        {relatedPost.featured_image && (
+                          <div className="aspect-video overflow-hidden">
+                            <img
+                              src={relatedPost.featured_image}
+                              alt={relatedPost.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                          </div>
+                        )}
+                        <CardContent className="p-5">
+                          <p className="text-xs text-muted-foreground mb-2">
+                            {relatedPost.published_at && format(new Date(relatedPost.published_at), "MMM d, yyyy")}
+                          </p>
+                          <h3 className="font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-2">
+                            {relatedPost.title}
+                          </h3>
+                          {relatedPost.excerpt && (
+                            <p className="text-sm text-muted-foreground line-clamp-2">
+                              {relatedPost.excerpt}
+                            </p>
+                          )}
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
         </article>
       </main>
