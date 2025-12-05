@@ -5,6 +5,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Index from "./pages/Index";
+import AboutPage from "./pages/AboutPage";
+import CoursesPage from "./pages/CoursesPage";
+import PlacementPage from "./pages/PlacementPage";
+import GalleryPage from "./pages/GalleryPage";
+import ContactPage from "./pages/ContactPage";
 import JavaTrainingChennai from "./pages/JavaTrainingChennai";
 import FullStackWebDevelopmentChennai from "./pages/FullStackWebDevelopmentChennai";
 import DigitalMarketingChennai from "./pages/DigitalMarketingChennai";
@@ -29,6 +34,11 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/courses" element={<CoursesPage />} />
+            <Route path="/placement" element={<PlacementPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="/java-training-chennai" element={<JavaTrainingChennai />} />
             <Route path="/full-stack-web-development-chennai" element={<FullStackWebDevelopmentChennai />} />
             <Route path="/digital-marketing-chennai" element={<DigitalMarketingChennai />} />

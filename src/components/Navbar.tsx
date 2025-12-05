@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
@@ -7,8 +7,6 @@ import logo from "@/assets/logo.png";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,13 +17,13 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { label: "Home", href: isHomePage ? "#home" : "/#home" },
-    { label: "Courses", href: isHomePage ? "#courses" : "/#courses" },
-    { label: "About", href: isHomePage ? "#about" : "/#about" },
-    { label: "Placement", href: isHomePage ? "#placement" : "/#placement" },
-    { label: "Gallery", href: isHomePage ? "#gallery" : "/#gallery" },
+    { label: "Home", href: "/" },
+    { label: "Courses", href: "/courses" },
+    { label: "About", href: "/about" },
+    { label: "Placement", href: "/placement" },
+    { label: "Gallery", href: "/gallery" },
     { label: "Blog", href: "/blog" },
-    { label: "Contact", href: isHomePage ? "#contact" : "/#contact" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -46,14 +44,14 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className="text-foreground hover:text-primary font-medium transition-colors relative group"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -82,14 +80,14 @@ const Navbar = () => {
           <div className="md:hidden py-6 border-t animate-slide-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   className="text-foreground hover:text-primary font-medium py-2 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <Button 
                 className="bg-primary hover:bg-primary/90 text-white rounded-full w-full"
