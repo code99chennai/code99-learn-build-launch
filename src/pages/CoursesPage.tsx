@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -129,10 +130,22 @@ const CoursesPage = () => {
         <title>IT Courses in Chennai | Java, Python, Full Stack Training - Code99 Academy</title>
         <meta name="description" content="Explore IT courses at Code99 Chennai - Java, Python, Full Stack, Digital Marketing & UI/UX training. Affordable fees ₹2,500/month with 100% placement support." />
         <meta name="keywords" content="IT courses chennai, software training chennai, java course chennai, python training chennai, full stack course chennai, digital marketing course chennai, UI UX course chennai" />
-        <link rel="canonical" href="https://code99.in/courses" />
+        <link rel="canonical" href="https://code99-it-academy.42web.io/courses" />
         <meta property="og:title" content="IT Courses in Chennai | Code99 IT Academy" />
         <meta property="og:description" content="Best IT courses in Chennai with 100% placement support. Java, Python, Full Stack, Digital Marketing & UI/UX training." />
-        <meta property="og:url" content="https://code99.in/courses" />
+        <meta property="og:url" content="https://code99-it-academy.42web.io/courses" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://code99-it-academy.42web.io/logo.png" />
+        <meta property="og:site_name" content="Code99 IT Academy" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="IT Courses in Chennai | Code99 IT Academy" />
+        <meta name="twitter:description" content="Java, Python, Full Stack, Digital Marketing & UI/UX courses in Chennai." />
+        <meta name="twitter:image" content="https://code99-it-academy.42web.io/logo.png" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Code99 IT Academy" />
+        <meta name="geo.region" content="IN-TN" />
+        <meta name="geo.placename" content="Chennai" />
         <script type="application/ld+json">{JSON.stringify(courseSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
@@ -140,6 +153,7 @@ const CoursesPage = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <BackToTop />
+        <PageBreadcrumb items={[{ label: "Courses" }]} />
 
         {/* Hero Section */}
         <section className="pt-28 pb-16 bg-gradient-to-br from-primary/5 via-background to-secondary/10">

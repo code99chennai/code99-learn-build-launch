@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Monitor, Users, Coffee, Award, Laptop, Presentation } from "lucide-react";
@@ -42,15 +43,28 @@ const GalleryPage = () => {
         <title>Gallery | Code99 IT Academy Chennai - Campus & Facilities</title>
         <meta name="description" content="Explore Code99 IT Academy Chennai's modern facilities - AC classrooms, computer lab, placement cell. See our campus in Velachery with photos of training sessions and events." />
         <meta name="keywords" content="code99 campus, IT training center chennai, computer lab velachery, software training facilities chennai, code99 classroom photos" />
-        <link rel="canonical" href="https://code99.in/gallery" />
+        <link rel="canonical" href="https://code99-it-academy.42web.io/gallery" />
         <meta property="og:title" content="Gallery | Code99 IT Academy Chennai Campus" />
         <meta property="og:description" content="Take a virtual tour of Code99's modern training facilities in Velachery, Chennai." />
-        <meta property="og:url" content="https://code99.in/gallery" />
+        <meta property="og:url" content="https://code99-it-academy.42web.io/gallery" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://code99-it-academy.42web.io/logo.png" />
+        <meta property="og:site_name" content="Code99 IT Academy" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Gallery | Code99 IT Academy Chennai" />
+        <meta name="twitter:description" content="Modern training facilities in Velachery, Chennai." />
+        <meta name="twitter:image" content="https://code99-it-academy.42web.io/logo.png" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Code99 IT Academy" />
+        <meta name="geo.region" content="IN-TN" />
+        <meta name="geo.placename" content="Chennai" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
         <Navbar />
         <BackToTop />
+        <PageBreadcrumb items={[{ label: "Gallery" }]} />
 
         {/* Hero Section */}
         <section className="pt-28 pb-16 bg-gradient-to-br from-primary/5 via-background to-secondary/10">

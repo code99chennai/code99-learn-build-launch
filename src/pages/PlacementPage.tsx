@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -89,16 +90,29 @@ const PlacementPage = () => {
         <title>100% Placement Support in Chennai | IT Job Assistance - Code99 Academy</title>
         <meta name="description" content="Get 100% placement support at Code99 Chennai. Resume building, mock interviews, and direct job referrals to TCS, Infosys, Zoho & 50+ companies. Start your IT career today." />
         <meta name="keywords" content="IT placement chennai, job placement support chennai, software job assistance chennai, IT job training chennai, placement guarantee chennai, IT jobs velachery" />
-        <link rel="canonical" href="https://code99.in/placement" />
+        <link rel="canonical" href="https://code99-it-academy.42web.io/placement" />
         <meta property="og:title" content="100% Placement Support | Code99 IT Academy Chennai" />
         <meta property="og:description" content="Launch your IT career with Code99's comprehensive placement support. Join 1000+ placed students in Chennai." />
-        <meta property="og:url" content="https://code99.in/placement" />
+        <meta property="og:url" content="https://code99-it-academy.42web.io/placement" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://code99-it-academy.42web.io/logo.png" />
+        <meta property="og:site_name" content="Code99 IT Academy" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="100% Placement Support | Code99 IT Academy" />
+        <meta name="twitter:description" content="Resume building, mock interviews, and job referrals in Chennai." />
+        <meta name="twitter:image" content="https://code99-it-academy.42web.io/logo.png" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Code99 IT Academy" />
+        <meta name="geo.region" content="IN-TN" />
+        <meta name="geo.placename" content="Chennai" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
         <Navbar />
         <BackToTop />
+        <PageBreadcrumb items={[{ label: "Placement" }]} />
 
         {/* Hero Section */}
         <section className="pt-28 pb-16 bg-gradient-to-br from-primary/5 via-background to-secondary/10">

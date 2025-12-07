@@ -2,42 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://code99itacademy.com/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <loc>https://code99-it-academy.42web.io/</loc>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://code99itacademy.com/logo.png</image:loc>
+      <image:loc>https://code99-it-academy.42web.io/logo.png</image:loc>
       <image:title>Code99 IT Academy Logo</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://code99itacademy.com/java-training-chennai</loc>
-    <lastmod>2025-11-14</lastmod>
+    <loc>https://code99-it-academy.42web.io/about</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://code99-it-academy.42web.io/courses</loc>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://code99itacademy.com/full-stack-web-development-chennai</loc>
-    <lastmod>2025-11-14</lastmod>
+    <loc>https://code99-it-academy.42web.io/placement</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://code99-it-academy.42web.io/gallery</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://code99-it-academy.42web.io/contact</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://code99-it-academy.42web.io/blog</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://code99-it-academy.42web.io/java-training-chennai</loc>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://code99itacademy.com/digital-marketing-chennai</loc>
-    <lastmod>2025-11-14</lastmod>
+    <loc>https://code99-it-academy.42web.io/full-stack-web-development-chennai</loc>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://code99itacademy.com/python-training-chennai</loc>
-    <lastmod>2025-11-14</lastmod>
+    <loc>https://code99-it-academy.42web.io/digital-marketing-chennai</loc>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://code99itacademy.com/ui-ux-training-chennai</loc>
-    <lastmod>2025-11-14</lastmod>
+    <loc>https://code99-it-academy.42web.io/python-training-chennai</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://code99-it-academy.42web.io/ui-ux-training-chennai</loc>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
