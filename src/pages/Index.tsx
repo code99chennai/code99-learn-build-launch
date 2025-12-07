@@ -10,10 +10,14 @@ import FeaturedPosts from "@/components/FeaturedPosts";
 import Footer from "@/components/Footer";
 import SocialLinks from "@/components/SocialLinks";
 import BackToTop from "@/components/BackToTop";
+import CustomCursor from "@/components/CustomCursor";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      {/* Custom Cursor */}
+      <CustomCursor />
+      
       <Navbar />
       
       {/* Floating Social Media Sidebar */}
