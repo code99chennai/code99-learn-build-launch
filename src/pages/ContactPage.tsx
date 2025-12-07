@@ -3,6 +3,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -124,10 +125,22 @@ const ContactPage = () => {
         <title>Contact Code99 IT Academy Chennai | IT Training Enquiry Velachery</title>
         <meta name="description" content="Contact Code99 IT Academy Chennai for IT course enquiries. Visit us at Velachery or call +91 6374510754. Free demo classes available for Java, Python, Full Stack courses." />
         <meta name="keywords" content="contact code99, IT training enquiry chennai, software course admission velachery, code99 phone number, code99 address chennai" />
-        <link rel="canonical" href="https://code99.in/contact" />
+        <link rel="canonical" href="https://code99-it-academy.42web.io/contact" />
         <meta property="og:title" content="Contact Code99 IT Academy Chennai" />
         <meta property="og:description" content="Get in touch for IT course enquiries. Free demo classes available." />
-        <meta property="og:url" content="https://code99.in/contact" />
+        <meta property="og:url" content="https://code99-it-academy.42web.io/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://code99-it-academy.42web.io/logo.png" />
+        <meta property="og:site_name" content="Code99 IT Academy" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Code99 IT Academy Chennai" />
+        <meta name="twitter:description" content="IT course enquiries and free demo classes in Velachery." />
+        <meta name="twitter:image" content="https://code99-it-academy.42web.io/logo.png" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Code99 IT Academy" />
+        <meta name="geo.region" content="IN-TN" />
+        <meta name="geo.placename" content="Chennai" />
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
@@ -135,6 +148,7 @@ const ContactPage = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <BackToTop />
+        <PageBreadcrumb items={[{ label: "Contact" }]} />
 
         {/* Hero Section */}
         <section className="pt-28 pb-16 bg-gradient-to-br from-primary/5 via-background to-secondary/10">

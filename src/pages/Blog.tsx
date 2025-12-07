@@ -5,6 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Loader2, Calendar, Eye, ArrowRight } from "lucide-react";
@@ -44,19 +45,27 @@ export default function Blog() {
   return (
     <>
       <Helmet>
-        <title>Blog - Code99 | Tech Articles & Training Insights</title>
-        <meta
-          name="description"
-          content="Read the latest articles on web development, programming, digital marketing, and career tips from Code99 - Chennai's premier IT training institute."
-        />
-        <meta
-          name="keywords"
-          content="tech blog, programming tutorials, web development articles, IT training Chennai, coding tips"
-        />
-        <link rel="canonical" href={`${window.location.origin}/blog`} />
+        <title>Blog - Code99 | Tech Articles & Training Insights Chennai</title>
+        <meta name="description" content="Read the latest articles on web development, programming, digital marketing, and career tips from Code99 - Chennai's premier IT training institute." />
+        <meta name="keywords" content="tech blog, programming tutorials, web development articles, IT training Chennai, coding tips, software development blog" />
+        <link rel="canonical" href="https://code99-it-academy.42web.io/blog" />
+        <meta property="og:title" content="Blog - Code99 IT Academy Chennai" />
+        <meta property="og:description" content="Tech articles and training insights from Chennai's premier IT training institute." />
+        <meta property="og:url" content="https://code99-it-academy.42web.io/blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://code99-it-academy.42web.io/logo.png" />
+        <meta property="og:site_name" content="Code99 IT Academy" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog - Code99 IT Academy Chennai" />
+        <meta name="twitter:description" content="Tech articles and training insights." />
+        <meta name="twitter:image" content="https://code99-it-academy.42web.io/logo.png" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Code99 IT Academy" />
       </Helmet>
 
       <Navbar />
+      <PageBreadcrumb items={[{ label: "Blog" }]} />
 
       <main className="min-h-screen bg-muted/30">
         {/* Hero Section */}

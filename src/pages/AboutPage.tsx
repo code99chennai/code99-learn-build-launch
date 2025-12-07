@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Award, Users, Target, Heart, Sparkles, CheckCircle, GraduationCap } from "lucide-react";
@@ -95,11 +96,22 @@ const AboutPage = () => {
         <title>About Code99 IT Academy Chennai | Best IT Training Institute in Velachery</title>
         <meta name="description" content="Learn about Code99 IT Academy Chennai - the premier IT training institute in Velachery offering Java, Python, Full Stack, Digital Marketing & UI/UX courses with 100% placement support." />
         <meta name="keywords" content="about code99, IT training institute chennai, software training center velachery, best coaching center chennai, IT academy velachery, computer training institute chennai" />
-        <link rel="canonical" href="https://code99.in/about" />
+        <link rel="canonical" href="https://code99-it-academy.42web.io/about" />
         <meta property="og:title" content="About Code99 IT Academy Chennai | Best IT Training Institute" />
         <meta property="og:description" content="Discover Code99 IT Academy - Chennai's trusted IT training institute with 100% placement support, industry expert faculty, and affordable courses." />
-        <meta property="og:url" content="https://code99.in/about" />
+        <meta property="og:url" content="https://code99-it-academy.42web.io/about" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://code99-it-academy.42web.io/logo.png" />
+        <meta property="og:site_name" content="Code99 IT Academy" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Code99 IT Academy Chennai" />
+        <meta name="twitter:description" content="Chennai's trusted IT training institute with 100% placement support." />
+        <meta name="twitter:image" content="https://code99-it-academy.42web.io/logo.png" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Code99 IT Academy" />
+        <meta name="geo.region" content="IN-TN" />
+        <meta name="geo.placename" content="Chennai" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       </Helmet>
@@ -107,6 +119,7 @@ const AboutPage = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <BackToTop />
+        <PageBreadcrumb items={[{ label: "About Us" }]} />
 
         {/* Hero Section */}
         <section className="pt-28 pb-16 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
