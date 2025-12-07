@@ -117,41 +117,58 @@ All colors MUST be HSL.
   }
 
   @keyframes gradient-shift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .gradient-accent {
-    background: var(--gradient-accent);
-  }
-
-  .shadow-card {
-    box-shadow: var(--shadow-card);
-  }
-
-  .shadow-hover {
-    box-shadow: var(--shadow-hover);
-  }
-
-  .animate-fade-up {
-    animation: fade-up 0.6s ease-out;
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   @keyframes fade-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
+
+  @keyframes click-ripple {
+    0% { width: 0; height: 0; opacity: 1; }
+    100% { width: 100px; height: 100px; opacity: 0; }
+  }
+
+  @keyframes scan-line {
+    0%, 100% { opacity: 0; transform: translateX(-100%); }
+    50% { opacity: 1; transform: translateX(100%); }
+  }
+
+  @keyframes pulse-line {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.4; }
+  }
+
+  @keyframes scroll-indicator {
+    0% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(8px); opacity: 0.5; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+  }
+
+  @keyframes gradient-x {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .animate-fade-up { animation: fade-up 0.6s ease-out forwards; }
+  .animate-click-ripple { animation: click-ripple 0.6s ease-out forwards; }
+  .animate-scroll-indicator { animation: scroll-indicator 2s ease-in-out infinite; }
+  .animate-wiggle { animation: wiggle 0.5s ease-in-out; }
+  .animate-gradient-x { animation: gradient-x 3s ease infinite; background-size: 200% 200%; }
+}
+
+/* Hide default cursor on desktop */
+@media (min-width: 1024px) {
+  body { cursor: none; }
+  a, button, [role="button"], input, textarea, select, .cursor-pointer { cursor: none; }
 }
