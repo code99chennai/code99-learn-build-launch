@@ -1,15 +1,37 @@
+import { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
+import CSSParticles from "@/components/CSSParticles";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Code, Globe, TrendingUp, Palette, Coffee, Clock, Users, Award, CheckCircle, ArrowRight } from "lucide-react";
+import { Code, Globe, TrendingUp, Palette, Coffee, Clock, Users, Award, CheckCircle, ArrowRight, Star, Sparkles, Phone } from "lucide-react";
 
 const CoursesPage = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const courses = [
     {
       icon: Coffee,
@@ -20,6 +42,7 @@ const CoursesPage = () => {
       skills: ["Core Java", "Spring Boot", "Hibernate", "MySQL", "REST APIs"],
       careers: ["Java Developer", "Backend Developer", "Software Engineer"],
       companies: ["TCS", "Infosys", "Cognizant", "Wipro"],
+      gradient: "from-amber-500 to-orange-500",
     },
     {
       icon: Code,
@@ -30,6 +53,7 @@ const CoursesPage = () => {
       skills: ["React", "Node.js", "MongoDB", "Express", "JavaScript"],
       careers: ["Full Stack Developer", "Frontend Developer", "MERN Developer"],
       companies: ["Zoho", "Freshworks", "Chargebee", "Kissflow"],
+      gradient: "from-blue-500 to-cyan-500",
     },
     {
       icon: Globe,
@@ -40,6 +64,7 @@ const CoursesPage = () => {
       skills: ["Python", "Django", "Flask", "Pandas", "NumPy"],
       careers: ["Python Developer", "Data Analyst", "Automation Engineer"],
       companies: ["Amazon", "PayPal", "Intel", "Nvidia"],
+      gradient: "from-emerald-500 to-green-500",
     },
     {
       icon: TrendingUp,
@@ -50,6 +75,7 @@ const CoursesPage = () => {
       skills: ["SEO", "Google Ads", "Social Media", "Analytics", "Content Marketing"],
       careers: ["Digital Marketer", "SEO Specialist", "Social Media Manager"],
       companies: ["Amazon", "Flipkart", "Swiggy", "Agencies"],
+      gradient: "from-purple-500 to-pink-500",
     },
     {
       icon: Palette,
@@ -60,6 +86,7 @@ const CoursesPage = () => {
       skills: ["Figma", "Adobe XD", "Wireframing", "Prototyping", "User Research"],
       careers: ["UI Designer", "UX Designer", "Product Designer"],
       companies: ["Zoho", "Freshworks", "Startups", "Design Agencies"],
+      gradient: "from-pink-500 to-rose-500",
     },
   ];
 
@@ -155,90 +182,68 @@ const CoursesPage = () => {
         <BackToTop />
         <PageBreadcrumb items={[{ label: "Courses" }]} />
 
-        {/* Hero Section */}
-        <section className="pt-28 pb-16 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-4xl mx-auto">
-              <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Our Courses</Badge>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                IT Training Courses in Chennai
+        {/* Animated Hero Section */}
+        <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden pt-20">
+          {/* Background Effects */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-primary/5" style={{
+            backgroundSize: '400% 400%',
+            animation: 'gradient-shift 15s ease infinite'
+          }} />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-transparent to-background/50 backdrop-blur-3xl" />
+          <CSSParticles />
+          
+          {/* Floating Orbs */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          
+          <div className="container mx-auto px-4 py-16 relative z-10">
+            <div className="text-center max-w-4xl mx-auto animate-fade-up">
+              <Badge className="mb-6 bg-primary/10 backdrop-blur-md text-primary border-primary/20 px-6 py-2 text-base">
+                <Star className="w-4 h-4 mr-2 fill-primary text-primary" />
+                Chennai's Top-Rated IT Academy
+              </Badge>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent" style={{
+                  backgroundSize: '200% auto',
+                  animation: 'gradient-shift 8s ease infinite'
+                }}>
+                  IT Training Courses
+                </span>
+                <br />
+                <span className="text-foreground">in Chennai 2025</span>
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
                 Launch your IT career with industry-relevant courses designed for Chennai's job market. 
-                From Java to Full Stack, Python to UI/UX – master the skills top companies are hiring for.
+                From <span className="text-primary font-semibold">Java to Full Stack</span>, <span className="text-primary font-semibold">Python to UI/UX</span> – master the skills top companies are hiring for.
               </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Button size="lg" asChild className="shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all">
+                  <a href="tel:+916374510754">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call: +91 6374510754
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="bg-background/50 backdrop-blur-sm">
+                  <Link to="/contact">Book Free Demo</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Course Features */}
-        <section className="py-12 border-b border-border/50">
-          <div className="container mx-auto px-4">
+        <section className="py-16 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-muted/50 to-background"></div>
+          <div className="container mx-auto px-4 relative z-10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {features.map((feature, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                    <feature.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-foreground">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* All Courses */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Choose Your Career Path</h2>
-              <p className="text-muted-foreground">Industry-aligned courses with hands-on training and placement support</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {courses.map((course, index) => (
-                <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-border/50 hover:border-primary/30 overflow-hidden">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                        <course.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-xl">{course.title}</CardTitle>
-                        <Badge variant="outline" className="mt-1">{course.duration}</Badge>
-                      </div>
+                <Card key={index} className="border-0 bg-background/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                      <feature.icon className="w-7 h-7 text-primary-foreground" />
                     </div>
-                    <p className="text-muted-foreground text-sm">{course.description}</p>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div>
-                      <p className="text-xs font-semibold text-foreground mb-2">KEY SKILLS</p>
-                      <div className="flex flex-wrap gap-2">
-                        {course.skills.map((skill, i) => (
-                          <Badge key={i} variant="secondary" className="text-xs">{skill}</Badge>
-                        ))}
-                      </div>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold text-foreground mb-2">CAREER OPTIONS</p>
-                      <p className="text-sm text-muted-foreground">{course.careers.join(" • ")}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold text-foreground mb-2">HIRING COMPANIES</p>
-                      <p className="text-sm text-muted-foreground">{course.companies.join(", ")}</p>
-                    </div>
-                    <div className="pt-4 border-t border-border/50 flex items-center justify-between">
-                      <div>
-                        <span className="text-2xl font-bold text-primary">₹2,500</span>
-                        <span className="text-sm text-muted-foreground">/month</span>
-                      </div>
-                      <Button asChild className="group/btn">
-                        <Link to={course.slug}>
-                          View Details <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                        </Link>
-                      </Button>
-                    </div>
+                    <h3 className="font-bold text-foreground mb-1">{feature.title}</h3>
+                    <p className="text-sm text-muted-foreground">{feature.desc}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -246,13 +251,97 @@ const CoursesPage = () => {
           </div>
         </section>
 
+        {/* All Courses */}
+        <section ref={sectionRef} className="py-20 relative overflow-hidden">
+          <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+              <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 px-4 py-1.5">
+                <Sparkles className="w-4 h-4 mr-2" />
+                Choose Your Path
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Career-Oriented <span className="text-primary">IT Courses</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Industry-aligned courses with hands-on training and 100% placement support
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+              {courses.map((course, index) => (
+                <Card 
+                  key={index} 
+                  className={`group border-0 bg-gradient-to-br from-background via-background to-muted/30 shadow-xl hover:shadow-2xl transition-all duration-700 overflow-hidden rounded-3xl ${
+                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+                  }`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  {/* Card Glow */}
+                  <div className={`absolute -inset-1 bg-gradient-to-r ${course.gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500`}></div>
+                  
+                  <div className="relative">
+                    <CardHeader className="pb-4">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${course.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                          <course.icon className="w-8 h-8 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl group-hover:text-primary transition-colors">{course.title}</CardTitle>
+                          <Badge variant="outline" className="mt-1 border-primary/30">{course.duration}</Badge>
+                        </div>
+                      </div>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{course.description}</p>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div>
+                        <p className="text-xs font-bold text-foreground mb-2 uppercase tracking-wider">Key Skills</p>
+                        <div className="flex flex-wrap gap-2">
+                          {course.skills.slice(0, 4).map((skill, i) => (
+                            <Badge key={i} className="bg-muted/80 text-foreground hover:bg-primary/10 transition-colors text-xs">{skill}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold text-foreground mb-2 uppercase tracking-wider">Career Options</p>
+                        <p className="text-sm text-muted-foreground">{course.careers.join(" • ")}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold text-foreground mb-2 uppercase tracking-wider">Hiring Companies</p>
+                        <p className="text-sm text-muted-foreground">{course.companies.join(", ")}</p>
+                      </div>
+                      <div className="pt-4 border-t border-border/30 flex items-center justify-between">
+                        <div>
+                          <span className="text-3xl font-bold text-primary">₹2,500</span>
+                          <span className="text-sm text-muted-foreground">/month</span>
+                        </div>
+                        <Button asChild className={`bg-gradient-to-r ${course.gradient} hover:opacity-90 text-white shadow-lg group/btn`}>
+                          <Link to={course.slug}>
+                            View Details 
+                            <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                          </Link>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Why Our Courses */}
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <Badge className="mb-4 bg-secondary/50 text-foreground">Why Code99</Badge>
-                <h2 className="text-3xl font-bold text-foreground">What Makes Our Courses Different</h2>
+        <section className="py-20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-16">
+                <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 px-4 py-1.5">Why Code99</Badge>
+                <h2 className="text-4xl font-bold text-foreground mb-4">
+                  What Makes Our Courses <span className="text-primary">Different</span>
+                </h2>
               </div>
               <div className="grid md:grid-cols-2 gap-6">
                 {[
@@ -263,13 +352,17 @@ const CoursesPage = () => {
                   { title: "Job Assistance", desc: "Direct connections to HR teams at 50+ companies hiring in Chennai." },
                   { title: "Lifetime Access", desc: "Free access to updated course materials and alumni network support." },
                 ].map((item, index) => (
-                  <div key={index} className="flex gap-4">
-                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground">{item.desc}</p>
-                    </div>
-                  </div>
+                  <Card key={index} className="border-0 bg-background/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group">
+                    <CardContent className="p-6 flex gap-4">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                        <CheckCircle className="w-5 h-5 text-primary-foreground" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-foreground mb-1">{item.title}</h3>
+                        <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </div>
@@ -277,19 +370,28 @@ const CoursesPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-primary text-primary-foreground">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">Start Your IT Career Today</h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
+        <section className="py-20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary"></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+          
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+              Start Your IT Career Today
+            </h2>
+            <p className="text-primary-foreground/80 mb-10 max-w-2xl mx-auto text-lg">
               Join 1000+ students who transformed their careers with Code99. 
               Free demo class available – experience our training before enrolling.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" variant="secondary" asChild>
+              <Button size="lg" variant="secondary" asChild className="shadow-xl hover:shadow-2xl transition-all">
                 <Link to="/contact">Book Free Demo</Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <a href="tel:+916374510754">Call: +91 6374510754</a>
+              <Button size="lg" className="bg-white/10 backdrop-blur-sm border border-white/20 text-primary-foreground hover:bg-white/20">
+                <a href="tel:+916374510754">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call: +91 6374510754
+                </a>
               </Button>
             </div>
           </div>
