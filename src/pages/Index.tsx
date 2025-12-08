@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import SocialLinks from "@/components/SocialLinks";
 import BackToTop from "@/components/BackToTop";
 import CustomCursor from "@/components/CustomCursor";
+import Testimonials from "@/components/Testimonials";
 
 const Index = () => {
   return (
@@ -31,6 +32,7 @@ const Index = () => {
         <Courses />
         <About />
         <Placement />
+        <Testimonials />
         <Gallery />
         <FeaturedPosts />
         <Contact />
